@@ -18,12 +18,14 @@ echo "=========================================================="
 yes | sudo add-apt-repository ppa:ondrej/php
 yes | sudo apt-get update
 sudo apt-get autoremove
-sudo chmod 777 /var/lib/php5
+sudo a2dismod php5
+#sudo chmod 777 /var/lib/php5
 
 echo "=========================================================="
 echo "Installing Xdebug."
 echo "=========================================================="
-yes | sudo apt-get install php5-xdebug
+yes | sudo apt-get install php php-mysql php-xml php-xdebug
+sudo service apache2 restart
 
 
 echo "=========================================================="
