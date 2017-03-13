@@ -24,7 +24,7 @@ sudo a2dismod php5
 echo "=========================================================="
 echo "Installing Xdebug."
 echo "=========================================================="
-yes | sudo apt-get install php php-mysql php-xml php-xdebug php-pgsql
+yes | sudo apt-get install php php-mysql php-xml php-xdebug php-pgsql php-ldap
 sudo service apache2 restart
 
 
