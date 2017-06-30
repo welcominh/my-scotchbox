@@ -1,32 +1,16 @@
 #!/usr/bin/env bash
 
 echo "=========================================================="
+echo "Installing missing packets."
+echo "=========================================================="
+sudo apt-get update
+sudo apt-get install php7.0-xml
+sudo service apache2 restart
+
+echo "=========================================================="
 echo "Installing bindfs."
 echo "=========================================================="
 sudo apt-get install bindfs
-
-echo "=========================================================="
-echo "Disabling obsolete PPA and reverting to official packages."
-echo "=========================================================="
-sudo apt-get install ppa-purge
-yes | sudo ppa-purge ppa:ondrej/php5-5.6
-
-# Update to current PPA
-echo "=========================================================="
-echo "Adding current PPA and updating packages."
-echo "=========================================================="
-yes | sudo add-apt-repository ppa:ondrej/php
-yes | sudo apt-get update
-sudo apt-get autoremove
-sudo a2dismod php5
-#sudo chmod 777 /var/lib/php5
-
-echo "=========================================================="
-echo "Installing Xdebug."
-echo "=========================================================="
-yes | sudo apt-get install php php-mysql php-xml php-xdebug php-pgsql php-ldap php-gd
-sudo service apache2 restart
-
 
 echo "=========================================================="
 echo "Aliases."
