@@ -1,16 +1,38 @@
 #!/usr/bin/env bash
 
 echo "=========================================================="
-echo "Installing missing packets."
-echo "=========================================================="
-sudo apt-get update
-sudo apt-get install php7.0-xml
-sudo service apache2 restart
-
-echo "=========================================================="
 echo "Installing bindfs."
 echo "=========================================================="
 sudo apt-get install bindfs
+
+echo "=========================================================="
+echo "Apache installation"
+echo "=========================================================="
+sudo apt-get update
+sudo apt-get install apache2 libapache2-mod-fastcgi
+
+echo "=========================================================="
+echo "PHP Installation"
+echo "=========================================================="
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ondrej/php
+
+sudo apt-get update
+sudo apt-get install php5.6 php5.6-fpm
+sudo apt-get install php7.2 php7.2-fpm
+
+echo "=========================================================="
+echo "Installing PHP missing libs"
+echo "=========================================================="
+
+sudo apt-get install php5.6-dom php5.6-xml php5.6-mysql
+sudo apt-get install php7.2-dom php7.2-xml php7.2-mysql
+
+echo "=========================================================="
+echo "Apache config"
+echo "=========================================================="
+sudo a2enmod actions fastcgi alias proxy_fcgi
+sudo service apache2 restart
 
 echo "=========================================================="
 echo "Aliases."
@@ -34,6 +56,7 @@ sed -i '3i\
 echo '' >> ~/.bashrc
 echo '# Git prompt branch name' >> ~/.bashrc
 echo 'export PS1="\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "' >> ~/.bashrc
+source ~/.bashrc
 
 echo "=========================================================="
 echo "Install phpMyAdmin."
@@ -44,3 +67,19 @@ if [ ! -d "/var/www/public/phpmyadmin" ]; then
 	sudo composer self-update
 	composer install
 fi
+
+echo "=========================================================="
+echo "Installing Capistrano."
+echo "=========================================================="
+gem install capistrano
+
+
+echo "=========================================================="
+echo "Install vhosts and enable sites"
+echo "=========================================================="
+sudo cp /var/www/my-scotchbox/backup_vhosts/* /etc/apache2/sites-available/
+sudo a2ensite ost-center
+sudo a2ensite direct-download
+sudo a2ensite webcam-mirror
+sudo service apache2 reload
+
