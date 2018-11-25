@@ -25,8 +25,8 @@ echo "=========================================================="
 echo "Installing PHP missing libs"
 echo "=========================================================="
 
-sudo apt-get install php5.6-dom php5.6-xml php5.6-mysql
-sudo apt-get install php7.2-dom php7.2-xml php7.2-mysql
+sudo apt-get install php5.6-dom php5.6-xml php5.6-mysql php5.6-gd
+sudo apt-get install php7.2-dom php7.2-xml php7.2-mysql php7.2-gd
 
 echo "=========================================================="
 echo "Apache config"
