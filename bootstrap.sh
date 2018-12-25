@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
 echo "=========================================================="
-echo "Installing bindfs."
+echo "Installing utils libs."
 echo "=========================================================="
-sudo apt-get install bindfs
+sudo timedatectl set-timezone Europe/Paris
+sudo apt-get install bindfs ntp
+sudo service ntp restart
 
 echo "=========================================================="
 echo "Apache installation"
