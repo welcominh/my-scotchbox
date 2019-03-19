@@ -4,7 +4,7 @@ echo "=========================================================="
 echo "Installing utils libs."
 echo "=========================================================="
 sudo timedatectl set-timezone Europe/Paris
-sudo apt-get install bindfs ntp
+sudo apt-get install bindfs ntp tree
 sudo service ntp restart
 
 echo "=========================================================="
@@ -49,7 +49,7 @@ echo "=========================================================="
 echo "Git prompt branch."
 echo "=========================================================="
 mkdir ~/.bash && cd ~/.bash && git clone git://github.com/jimeh/git-aware-prompt.git
-# en début de fichier
+# en dÃ©but de fichier
 sed -i '1iexport GITAWAREPROMPT=~/.bash/git-aware-prompt' ~/.bashrc
 sed -i '2isource "${GITAWAREPROMPT}/main.sh"' ~/.bashrc
 sed -i '3i\
