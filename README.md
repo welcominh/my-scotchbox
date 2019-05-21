@@ -7,6 +7,7 @@ Install plugins to improve vagrant performances
     vagrant plugin install vagrant-winnfsd
     vagrant plugin install vagrant-disksize
     vagrant plugin install vagrant-fsnotify
+    vagrant plugin install vagrant-triggers
 
 To configure the box for the first time use, clone [my-scotchbox](https://github.com/welcominh/my-scotchbox) project to workspace root (vagrantfile file should be there).
 
