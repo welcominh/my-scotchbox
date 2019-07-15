@@ -4,7 +4,7 @@ echo "=========================================================="
 echo "Installing utils libs."
 echo "=========================================================="
 sudo timedatectl set-timezone Europe/Paris
-sudo apt-get install bindfs ntp tree
+sudo apt-get install bindfs ntp tree default-jre
 sudo service ntp restart
 
 echo "=========================================================="
