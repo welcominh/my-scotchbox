@@ -2,6 +2,7 @@
 Install plugins to improve vagrant performances
 
     vagrant plugin install vagrant-bindfs
+    vagrant plugin install vagrant-winnfsd
     vagrant plugin install vagrant-faster
     vagrant plugin install vagrant-share
     vagrant plugin install vagrant-disksize
