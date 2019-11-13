@@ -53,8 +53,14 @@ echo "=========================================================="
 # replace original alias "l" by classical one
 sed -i -e "s/alias l='ls -CF'/alias l='ls -al'/g" ~/.bashrc
 echo "alias sf='php bin/console'" >> ~/.bashrc
+
+echo "=========================================================="
+echo "Git configs."
+echo "=========================================================="
 git config --global alias.st status
 git config --global alias.co checkout
+git config --global core.excludesfile ~/.gitignore
+echo ".idea" >> ~/.gitignore
 
 echo "=========================================================="
 echo "Git prompt branch."
