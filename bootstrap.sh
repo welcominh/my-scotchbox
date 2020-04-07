@@ -30,15 +30,15 @@ sudo apt-get install python-software-properties
 sudo add-apt-repository ppa:ondrej/php
 
 sudo apt-get update
-sudo apt-get install php5.6 php5.6-fpm
 sudo apt-get install php7.2 php7.2-fpm
+sudo apt-get install php7.4 php7.4-fpm
 
 echo "=========================================================="
 echo "Installing PHP missing libs"
 echo "=========================================================="
 
-sudo apt-get install php5.6-dom php5.6-xml php5.6-mysql php5.6-gd php5.6-mbstring php5.6-curl php5.6-bcmath php5.6-intl
 sudo apt-get install php7.2-dom php7.2-xml php7.2-mysql php7.2-gd php7.2-mbstring php7.2-curl php7.2-bcmath php7.2-intl php7.2-zip
+sudo apt-get install php7.4-dom php7.4-xml php7.4-mysql php7.4-gd php7.4-mbstring php7.4-curl php7.4-bcmath php7.4-intl php7.4-zip
 sudo apt-get install rabbitmq-server
 
 echo "=========================================================="
