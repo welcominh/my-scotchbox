@@ -17,3 +17,6 @@ Once `vagrant up` done for the first time :
     ./bootstrap.sh
 
 And follow steps !
+
+## To watch file system changes
+`vagrant fsevents`
