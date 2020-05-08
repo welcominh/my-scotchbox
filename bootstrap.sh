@@ -47,6 +47,13 @@ sudo a2enmod actions fastcgi alias proxy_fcgi
 sudo service apache2 restart
 
 echo "=========================================================="
+echo "MySQL config"
+echo "=========================================================="
+echo "ft_min_word_len = 1" >> /etc/mysql/mysql.conf.d/mysqld.cnf
+echo "ft_stopword_file = ''" >> /etc/mysql/mysql.conf.d/mysqld.cnf
+sudo service mysql restart
+
+echo "=========================================================="
 echo "Aliases."
 echo "=========================================================="
 # replace original alias "l" by classical one
