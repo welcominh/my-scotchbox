@@ -9,7 +9,7 @@ sudo apt-key list | \
  xargs -n1 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get -y upgrade
 
 echo "=========================================================="
 echo "Installing utils libs."
