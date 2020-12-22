@@ -12,7 +12,8 @@ To configure the box for the first time use, clone [my-scotchbox](https://github
 
 Once `vagrant up` done for the first time :
 
-    cp /var/www/my-scotchbox/bootstrap.sh .
+    cd /var/www
+    cp my-scotchbox/bootstrap.sh .
     chmod 755 bootstrap.sh
     ./bootstrap.sh
 
