@@ -15,30 +15,29 @@ echo "=========================================================="
 echo "Installing utils libs."
 echo "=========================================================="
 sudo timedatectl set-timezone Europe/Paris
-sudo apt-get install bindfs ntp tree default-jre
+sudo apt-get install -y bindfs ntp tree default-jre
 sudo service ntp restart
 
 echo "=========================================================="
 echo "Apache installation"
 echo "=========================================================="
-sudo apt-get install apache2 libapache2-mod-fastcgi
+sudo apt-get install -y apache2 libapache2-mod-fastcgi
 
 echo "=========================================================="
 echo "PHP Installation"
 echo "=========================================================="
-sudo apt-get install python-software-properties
+sudo apt-get install -y python-software-properties
 sudo add-apt-repository ppa:ondrej/php
 
 sudo apt-get update
-sudo apt-get install php7.2 php7.2-fpm
-sudo apt-get install php7.4 php7.4-fpm
+sudo apt-get install -y php7.2 php7.2-fpm
+sudo apt-get install -y php7.4 php7.4-fpm
 
 echo "=========================================================="
 echo "Installing PHP missing libs"
 echo "=========================================================="
 
-sudo apt-get install php7.4-dom php7.4-xml php7.4-mysql php7.4-gd php7.4-mbstring php7.4-curl php7.4-bcmath php7.4-intl php7.4-zip php7.4-igbinary
-sudo apt-get install rabbitmq-server
+sudo apt-get install -y php7.4-dom php7.4-xml php7.4-mysql php7.4-gd php7.4-mbstring php7.4-curl php7.4-bcmath php7.4-intl php7.4-zip php7.4-igbinary
 
 echo "=========================================================="
 echo "Apache config"
