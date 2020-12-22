@@ -3,11 +3,11 @@
 echo "=========================================================="
 echo "Update all expired keys from Ubuntu key server"
 echo "=========================================================="
-sudo apt-key list | \
- grep "expired: " | \
- sed -ne 's|pub .*/\([^ ]*\) .*|\1|gp' | \
- xargs -n1 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+#sudo apt-key list | \
+# grep "expired: " | \
+# sed -ne 's|pub .*/\([^ ]*\) .*|\1|gp' | \
+# xargs -n1 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys
+#curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 sudo apt-get update
 sudo apt-get -y upgrade
 
@@ -98,7 +98,6 @@ echo "=========================================================="
 if [ ! -d "/var/www/public/phpmyadmin" ]; then
 	cd /var/www/public/ && wget -q https://github.com/phpmyadmin/phpmyadmin/archive/master.zip
 	unzip -q master.zip && mv phpmyadmin-master phpmyadmin && cd phpmyadmin
-	sudo composer self-update
 	composer install
 fi
 
