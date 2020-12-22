@@ -86,6 +86,13 @@ echo 'export PS1="\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033
 source ~/.bashrc
 
 echo "=========================================================="
+echo "Update composer."
+echo "=========================================================="
+sudo rm -f /usr/local/bin/composer
+sudo curl -s https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+
+echo "=========================================================="
 echo "Install phpMyAdmin."
 echo "=========================================================="
 if [ ! -d "/var/www/public/phpmyadmin" ]; then
