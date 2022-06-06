@@ -30,7 +30,6 @@ sudo apt-get install -y python-software-properties
 sudo add-apt-repository ppa:ondrej/php
 
 sudo apt-get update
-sudo apt-get install -y php7.2 php7.2-fpm
 sudo apt-get install -y php7.4 php7.4-fpm
 
 echo "=========================================================="
