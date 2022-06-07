@@ -3,11 +3,12 @@
 echo "=========================================================="
 echo "Update all expired keys from Ubuntu key server"
 echo "=========================================================="
-#sudo apt-key list | \
-# grep "expired: " | \
-# sed -ne 's|pub .*/\([^ ]*\) .*|\1|gp' | \
-# xargs -n1 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys
-#curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+sudo apt-key list | \
+ grep "expired: " | \
+ sed -ne 's|pub .*/\([^ ]*\) .*|\1|gp' | \
+ xargs -n1 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+sudo rm /etc/apt/sources.list.d/mongodb*.list
 sudo apt-get update
 sudo apt-get -y upgrade
 
