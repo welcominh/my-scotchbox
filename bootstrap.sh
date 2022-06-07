@@ -72,7 +72,7 @@ echo ".idea" >> ~/.gitignore
 echo "=========================================================="
 echo "Git prompt branch."
 echo "=========================================================="
-mkdir ~/.bash && cd ~/.bash && git clone git://github.com/jimeh/git-aware-prompt.git
+mkdir ~/.bash && cd ~/.bash && git clone https://github.com/jimeh/git-aware-prompt.git
 # en début de fichier
 sed -i '1iexport GITAWAREPROMPT=~/.bash/git-aware-prompt' ~/.bashrc
 sed -i '2isource "${GITAWAREPROMPT}/main.sh"' ~/.bashrc
